@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Moon, Sun, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -10,6 +10,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const isMobile = useIsMobile();
+  const location = useLocation();
 
   // Detect scroll for background change
   useEffect(() => {
@@ -40,7 +41,6 @@ const Header = () => {
     { name: 'Accueil', path: '/' },
     { name: 'À Propos', path: '/a-propos' },
     { name: 'Services', path: '/services' },
-    { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -70,7 +70,10 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className="font-medium text-royal-dark dark:text-white hover:text-royal transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-gold hover:after:w-full after:transition-all after:duration-300"
+                className={`font-medium hover:text-royal transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-gold hover:after:w-full after:transition-all after:duration-300 
+                  ${location.pathname === item.path ? 
+                    'text-royal dark:text-gold after:w-full' : 
+                    'text-royal-dark dark:text-white'}`}
               >
                 {item.name}
               </Link>
@@ -92,9 +95,11 @@ const Header = () => {
 
           {/* Consultation CTA (visible on desktop) */}
           {!isMobile && (
-            <Button className="btn-primary hidden md:flex">
-              <Phone size={16} />
-              Consultation gratuite
+            <Button asChild className="btn-primary hidden md:flex">
+              <Link to="/contact">
+                <Phone size={16} />
+                Consultation gratuite
+              </Link>
             </Button>
           )}
 
@@ -120,15 +125,20 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className="py-3 border-b border-elegant/20 font-medium text-royal-dark dark:text-white"
+                className={`py-3 border-b border-elegant/20 font-medium 
+                  ${location.pathname === item.path ? 
+                    'text-royal dark:text-gold' : 
+                    'text-royal-dark dark:text-white'}`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
-            <Button className="btn-primary mt-4">
-              <Phone size={16} />
-              Consultation gratuite
+            <Button asChild className="btn-primary mt-4">
+              <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                <Phone size={16} />
+                Consultation gratuite
+              </Link>
             </Button>
           </nav>
         </div>

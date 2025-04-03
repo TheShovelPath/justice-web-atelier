@@ -1,10 +1,12 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook, Linkedin, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Linkedin, Twitter, Settings } from 'lucide-react';
+import { useAdmin } from '@/context/AdminContext';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { toggleAdminMode } = useAdmin();
   
   return (
     <footer className="bg-royal-dark text-white pt-16 pb-8">
@@ -41,22 +43,22 @@ const Footer = () => {
             <h3 className="font-playfair font-bold text-xl mb-6 text-gold-light">Nos Expertises</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/services/droit-affaires" className="text-elegant hover:text-gold transition-colors">
+                <Link to="/services#droit-affaires" className="text-elegant hover:text-gold transition-colors">
                   Droit des affaires
                 </Link>
               </li>
               <li>
-                <Link to="/services/droit-famille" className="text-elegant hover:text-gold transition-colors">
+                <Link to="/services#droit-famille" className="text-elegant hover:text-gold transition-colors">
                   Droit de la famille
                 </Link>
               </li>
               <li>
-                <Link to="/services/droit-penal" className="text-elegant hover:text-gold transition-colors">
+                <Link to="/services#droit-penal" className="text-elegant hover:text-gold transition-colors">
                   Droit pénal
                 </Link>
               </li>
               <li>
-                <Link to="/services/droit-immobilier" className="text-elegant hover:text-gold transition-colors">
+                <Link to="/services#droit-immobilier" className="text-elegant hover:text-gold transition-colors">
                   Droit immobilier
                 </Link>
               </li>
@@ -73,8 +75,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="text-elegant hover:text-gold transition-colors">
-                  Blog Juridique
+                <Link to="/services" className="text-elegant hover:text-gold transition-colors">
+                  Services
                 </Link>
               </li>
               <li>
@@ -83,9 +85,13 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/rendez-vous" className="text-elegant hover:text-gold transition-colors">
-                  Rendez-vous
-                </Link>
+                <button 
+                  onClick={toggleAdminMode}
+                  className="text-elegant hover:text-gold transition-colors flex items-center gap-1"
+                >
+                  <Settings size={16} />
+                  Administration
+                </button>
               </li>
             </ul>
           </div>

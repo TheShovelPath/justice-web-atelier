@@ -4,7 +4,6 @@ import HeroSection from '@/components/home/HeroSection';
 import SpecialtiesSection from '@/components/home/SpecialtiesSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import CTASection from '@/components/home/CTASection';
-import BlogPreviewSection from '@/components/home/BlogPreviewSection';
 
 const Index = () => {
   // Scroll to top on page load
@@ -17,7 +16,6 @@ const Index = () => {
       <HeroSection />
       <SpecialtiesSection />
       <TestimonialsSection />
-      <BlogPreviewSection />
       <CTASection />
     </>
   );
