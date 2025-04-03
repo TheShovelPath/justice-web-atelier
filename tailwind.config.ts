@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,27 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Law firm specific colors
+				royal: {
+					DEFAULT: '#1A237E', // Royal Blue
+					light: '#4A51A3',
+					dark: '#0C125F'
+				},
+				elegant: {
+					DEFAULT: '#B0BEC5', // Gray
+					light: '#CFD8DC',
+					dark: '#90A4AE'
+				},
+				gold: {
+					DEFAULT: '#FFD700', // Gold
+					light: '#FFEB3B',
+					dark: '#FFC107'
 				}
+			},
+			fontFamily: {
+				playfair: ['Playfair Display', 'serif'],
+				lora: ['Lora', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -70,25 +91,37 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'fade-in-left': {
+					'0%': { opacity: '0', transform: 'translateX(-20px)' },
+					'100%': { opacity: '1', transform: 'translateX(0)' }
+				},
+				'fade-in-right': {
+					'0%': { opacity: '0', transform: 'translateX(20px)' },
+					'100%': { opacity: '1', transform: 'translateX(0)' }
+				},
+				'balance-rotate': {
+					'0%, 100%': { transform: 'rotate(-5deg)' },
+					'50%': { transform: 'rotate(5deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.7s ease-out',
+				'fade-in-left': 'fade-in-left 0.7s ease-out',
+				'fade-in-right': 'fade-in-right 0.7s ease-out',
+				'balance-rotate': 'balance-rotate 5s ease-in-out infinite'
 			}
 		}
 	},
