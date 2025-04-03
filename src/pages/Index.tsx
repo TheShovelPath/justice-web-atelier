@@ -5,8 +5,6 @@ import SpecialtiesSection from '@/components/home/SpecialtiesSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import CTASection from '@/components/home/CTASection';
 import BlogPreviewSection from '@/components/home/BlogPreviewSection';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 
 const Index = () => {
   // Scroll to top on page load
@@ -15,17 +13,13 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-grow">
-        <HeroSection />
-        <SpecialtiesSection />
-        <TestimonialsSection />
-        <BlogPreviewSection />
-        <CTASection />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <HeroSection />
+      <SpecialtiesSection />
+      <TestimonialsSection />
+      <BlogPreviewSection />
+      <CTASection />
+    </>
   );
 };
 
