@@ -3,7 +3,6 @@ import React from 'react';
 import { Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import EditableContent from '@/components/admin/EditableContent';
 
 const HeroSection = () => {
   return (
@@ -16,53 +15,34 @@ const HeroSection = () => {
           <div className="space-y-6">
             <div className="inline-block mb-2">
               <span className="text-sm font-medium bg-royal text-white px-3 py-1 rounded-full">
-                <EditableContent contentKey="header-cabinet" tag="span">
-                  Cabinet d'Avocats
-                </EditableContent>
+                Cabinet d'Avocats
               </span>
             </div>
             
             <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-royal-dark dark:text-white leading-tight">
-              <EditableContent 
-                contentKey="hero-title" 
-                tag="span"
-              >
-                Votre Défense, <br />
-                <span className="text-gold">Notre Engagement</span>
-              </EditableContent>
+              Votre Défense, <br />
+              <span className="text-gold">Notre Engagement</span>
             </h1>
             
-            <EditableContent 
-              contentKey="hero-subtitle" 
-              tag="p"
-              className="text-lg md:text-xl text-royal/80 dark:text-elegant mt-4 max-w-lg"
-            >
+            <p className="text-lg md:text-xl text-royal/80 dark:text-elegant mt-4 max-w-lg">
               Excellence juridique au service de vos droits. Notre cabinet d'avocats expert vous accompagne dans toutes vos démarches légales.
-            </EditableContent>
+            </p>
             
-            <EditableContent 
-              contentKey="hero-slogan" 
-              tag="h2"
-              className="font-playfair text-2xl text-royal dark:text-gold-light font-semibold mt-6"
-            >
+            <h2 className="font-playfair text-2xl text-royal dark:text-gold-light font-semibold mt-6">
               Votre justice, notre priorité.
-            </EditableContent>
+            </h2>
             
             <div className="flex flex-wrap gap-4 pt-4">
               <Button asChild className="btn-primary">
-                <Link to="/contact">
+                <Link to="/rendez-vous">
                   <Phone size={16} />
-                  <EditableContent contentKey="hero-cta" tag="span">
-                    Demandez une consultation gratuite
-                  </EditableContent>
+                  Demandez une consultation gratuite
                 </Link>
               </Button>
               
               <Button asChild variant="outline" className="border-royal/30 hover:border-royal dark:border-elegant/30 dark:hover:border-white">
                 <Link to="/a-propos">
-                  <EditableContent contentKey="hero-cta-secondary" tag="span">
-                    En savoir plus
-                  </EditableContent>
+                  En savoir plus
                 </Link>
               </Button>
             </div>
@@ -70,7 +50,9 @@ const HeroSection = () => {
           
           {/* Right column: Balance of justice animation */}
           <div className="flex justify-center">
-            <div className="text-9xl md:text-[10rem] animate-balance-rotate text-gold relative">
+            <div 
+              className="text-9xl md:text-[10rem] animate-balance-rotate text-gold relative"
+            >
               ⚖️
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-full">
                 <div className="flex justify-center gap-3 mt-6">

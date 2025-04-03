@@ -41,22 +41,22 @@ const Footer = () => {
             <h3 className="font-playfair font-bold text-xl mb-6 text-gold-light">Nos Expertises</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/services#droit-affaires" className="text-elegant hover:text-gold transition-colors">
+                <Link to="/services/droit-affaires" className="text-elegant hover:text-gold transition-colors">
                   Droit des affaires
                 </Link>
               </li>
               <li>
-                <Link to="/services#droit-famille" className="text-elegant hover:text-gold transition-colors">
+                <Link to="/services/droit-famille" className="text-elegant hover:text-gold transition-colors">
                   Droit de la famille
                 </Link>
               </li>
               <li>
-                <Link to="/services#droit-penal" className="text-elegant hover:text-gold transition-colors">
+                <Link to="/services/droit-penal" className="text-elegant hover:text-gold transition-colors">
                   Droit pénal
                 </Link>
               </li>
               <li>
-                <Link to="/services#droit-immobilier" className="text-elegant hover:text-gold transition-colors">
+                <Link to="/services/droit-immobilier" className="text-elegant hover:text-gold transition-colors">
                   Droit immobilier
                 </Link>
               </li>
@@ -73,13 +73,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-elegant hover:text-gold transition-colors">
-                  Services
+                <Link to="/blog" className="text-elegant hover:text-gold transition-colors">
+                  Blog Juridique
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-elegant hover:text-gold transition-colors">
                   Nous Contacter
+                </Link>
+              </li>
+              <li>
+                <Link to="/rendez-vous" className="text-elegant hover:text-gold transition-colors">
+                  Rendez-vous
                 </Link>
               </li>
             </ul>
