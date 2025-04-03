@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Calendar } from 'lucide-react';
+import EditableContent from '@/components/admin/EditableContent';
 
 const CTASection = () => {
   return (
@@ -14,18 +15,26 @@ const CTASection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6">
+          <EditableContent 
+            contentKey="cta-title"
+            tag="h2"
+            className="font-playfair text-3xl md:text-4xl font-bold mb-6"
+          >
             Besoin d'un Conseil Juridique?
-          </h2>
+          </EditableContent>
           
-          <p className="text-white/80 text-lg mb-8">
+          <EditableContent 
+            contentKey="cta-text"
+            tag="p"
+            className="text-white/80 text-lg mb-8"
+          >
             Notre équipe d'avocats expérimentés est prête à vous accompagner. 
             Prenez rendez-vous pour une consultation initiale gratuite et discutons de votre situation.
-          </p>
+          </EditableContent>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild className="bg-white text-royal hover:bg-elegant hover:text-royal-dark">
-              <Link to="/rendez-vous" className="flex items-center gap-2">
+              <Link to="/contact" className="flex items-center gap-2">
                 <Calendar size={18} />
                 Prendre rendez-vous
               </Link>

@@ -120,3 +120,31 @@
 .accent-border-left {
   border-left: 3px solid #FFD700;
 }
+
+/* Custom animations */
+@keyframes balance-rotate {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+.animate-balance-rotate {
+  animation: balance-rotate 6s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+/* For admin mode */
+.admin-edit-overlay {
+  @apply absolute inset-0 bg-gold/10 border border-dashed border-gold rounded-md pointer-events-none opacity-0 transition-opacity;
+}
+
+.admin-editable:hover .admin-edit-overlay {
+  @apply opacity-100;
+}
