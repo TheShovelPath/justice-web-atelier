@@ -8,29 +8,29 @@ import EditableContent from '@/components/admin/EditableContent';
 const specialties = [
   {
     id: 1,
-    title: "Droit des affaires",
-    description: "Accompagnement juridique pour les entreprises, conseils sur les contrats commerciaux et résolution des litiges commerciaux.",
+    titleKey: "droit-affaires-title",
+    descriptionKey: "droit-affaires-desc",
     icon: "💼",
     link: "/services#droit-affaires"
   },
   {
     id: 2,
-    title: "Droit de la famille",
-    description: "Divorce, garde d'enfants, successions et régimes matrimoniaux. Nous vous assistons dans ces moments délicats.",
+    titleKey: "droit-famille-title",
+    descriptionKey: "droit-famille-desc",
     icon: "👪",
     link: "/services#droit-famille"
   },
   {
     id: 3,
-    title: "Droit pénal",
-    description: "Défense des particuliers et des entreprises face aux poursuites pénales, avec une approche stratégique.",
+    titleKey: "droit-penal-title",
+    descriptionKey: "droit-penal-desc",
     icon: "⚖️",
     link: "/services#droit-penal"
   },
   {
     id: 4,
-    title: "Droit immobilier",
-    description: "Litiges, contrats et transactions immobilières. Expertise pour sécuriser vos projets immobiliers.",
+    titleKey: "droit-immobilier-title",
+    descriptionKey: "droit-immobilier-desc",
     icon: "🏢",
     link: "/services#droit-immobilier"
   }
@@ -59,7 +59,7 @@ const SpecialtiesSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {specialties.map((specialty, index) => (
+          {specialties.map((specialty) => (
             <Card 
               key={specialty.id}
               className="service-card border hover:shadow-lg dark:bg-royal-dark/40 dark:border-elegant/10 dark:hover:border-gold/20 transition-all group"
@@ -67,12 +67,24 @@ const SpecialtiesSection = () => {
               <CardHeader>
                 <div className="text-4xl mb-4">{specialty.icon}</div>
                 <CardTitle className="text-xl font-playfair text-royal-dark dark:text-white">
-                  {specialty.title}
+                  <EditableContent contentKey={specialty.titleKey}>
+                    {specialty.titleKey === "droit-affaires-title" ? "Droit des affaires" :
+                     specialty.titleKey === "droit-famille-title" ? "Droit de la famille" :
+                     specialty.titleKey === "droit-penal-title" ? "Droit pénal" : "Droit immobilier"}
+                  </EditableContent>
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-royal/70 dark:text-elegant/90 mb-6">
-                  {specialty.description}
+                  <EditableContent contentKey={specialty.descriptionKey}>
+                    {specialty.descriptionKey === "droit-affaires-desc" ? 
+                      "Accompagnement juridique pour les entreprises, conseils sur les contrats commerciaux et résolution des litiges commerciaux." :
+                     specialty.descriptionKey === "droit-famille-desc" ?
+                      "Divorce, garde d'enfants, successions et régimes matrimoniaux. Nous vous assistons dans ces moments délicats." :
+                     specialty.descriptionKey === "droit-penal-desc" ?
+                      "Défense des particuliers et des entreprises face aux poursuites pénales, avec une approche stratégique." :
+                      "Litiges, contrats et transactions immobilières. Expertise pour sécuriser vos projets immobiliers."}
+                  </EditableContent>
                 </CardDescription>
                 <Link 
                   to={specialty.link}

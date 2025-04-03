@@ -16,7 +16,9 @@ const HeroSection = () => {
           <div className="space-y-6">
             <div className="inline-block mb-2">
               <span className="text-sm font-medium bg-royal text-white px-3 py-1 rounded-full">
-                Cabinet d'Avocats
+                <EditableContent contentKey="header-cabinet" tag="span">
+                  Cabinet d'Avocats
+                </EditableContent>
               </span>
             </div>
             
@@ -48,15 +50,19 @@ const HeroSection = () => {
             
             <div className="flex flex-wrap gap-4 pt-4">
               <Button asChild className="btn-primary">
-                <Link to="/rendez-vous">
+                <Link to="/contact">
                   <Phone size={16} />
-                  Demandez une consultation gratuite
+                  <EditableContent contentKey="hero-cta" tag="span">
+                    Demandez une consultation gratuite
+                  </EditableContent>
                 </Link>
               </Button>
               
               <Button asChild variant="outline" className="border-royal/30 hover:border-royal dark:border-elegant/30 dark:hover:border-white">
                 <Link to="/a-propos">
-                  En savoir plus
+                  <EditableContent contentKey="hero-cta-secondary" tag="span">
+                    En savoir plus
+                  </EditableContent>
                 </Link>
               </Button>
             </div>

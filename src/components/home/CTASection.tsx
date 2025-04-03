@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Calendar } from 'lucide-react';
+import { Calendar, Phone } from 'lucide-react';
 import EditableContent from '@/components/admin/EditableContent';
 
 const CTASection = () => {
@@ -36,13 +36,17 @@ const CTASection = () => {
             <Button asChild className="bg-white text-royal hover:bg-elegant hover:text-royal-dark">
               <Link to="/contact" className="flex items-center gap-2">
                 <Calendar size={18} />
-                Prendre rendez-vous
+                <EditableContent contentKey="cta-button-primary" tag="span">
+                  Prendre rendez-vous
+                </EditableContent>
               </Link>
             </Button>
             
             <Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
               <Link to="/contact">
-                Nous contacter
+                <EditableContent contentKey="cta-button-secondary" tag="span">
+                  Nous contacter
+                </EditableContent>
               </Link>
             </Button>
           </div>
