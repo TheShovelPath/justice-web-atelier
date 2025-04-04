@@ -11,15 +11,14 @@ import ContactPage from "./pages/ContactPage";
 import ServicesPage from "./pages/ServicesPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { AdminProvider } from "./context/AdminContext";
-import AdminControls from "./components/admin/AdminControls";
+
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <AdminProvider>
+   
         <Toaster />
         <Sonner />
         <BrowserRouter>
@@ -36,10 +35,10 @@ const App = () => (
               </Routes>
             </main>
             <Footer />
-            <AdminControls />
+       
           </div>
         </BrowserRouter>
-      </AdminProvider>
+      
     </TooltipProvider>
   </QueryClientProvider>
 );

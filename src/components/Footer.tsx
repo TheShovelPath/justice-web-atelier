@@ -2,11 +2,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Linkedin, Twitter, Settings } from 'lucide-react';
-import { useAdmin } from '@/context/AdminContext';
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const { toggleAdminMode } = useAdmin();
+ 
   
   return (
     <footer className="bg-royal-dark text-white pt-16 pb-8">
@@ -85,13 +85,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <button 
-                  onClick={toggleAdminMode}
-                  className="text-elegant hover:text-gold transition-colors flex items-center gap-1"
-                >
-                  <Settings size={16} />
-                  Administration
-                </button>
+                
               </li>
             </ul>
           </div>
