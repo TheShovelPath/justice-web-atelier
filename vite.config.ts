@@ -16,4 +16,5 @@ export default defineConfig(() => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  base: '/justice-web-atelier/', // Ajouter la base pour GitHub Pages
 }));
